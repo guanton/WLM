@@ -1,0 +1,9 @@
+README.md
+.idea/
+.DS_Store
+__pycache__/
+datasets/
+*.npz
+*.pt
+boids_animations_generalization/
+boids_demo_notebook.ipynb

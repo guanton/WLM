@@ -1,0 +1,24 @@
+# Data-generation config (EB)
+
+# Core settings
+seed: 1
+device: cpu
+mode: eb
+
+# Dataset specific params (Matches eb.py defaults)
+npz_path: "datasets/eb_velocity_v5.npz"
+num_times: 5       # Standard TrajectoryNet 5-point grid
+pca_dim: 5         # Keep top 5 PCs
+num_p0: 1          # Single population
+
+# (Optional) Geometric Blur estimation
+# These control how the "blur" heuristic is calculated for regularization
+blur_scale: 0.5
+blur_min: 1.0e-3
+blur_max: 10.0
+blur_num_times: 5  # Match num_times
+blur_pairs_per_time: 4096
+blur_particles_subsample: 4000
+
+# NOTE: 'dt' and 'steps' are determined automatically by the loader
+# (dt=1.0, steps=num_times-1) but can be overridden here if needed.

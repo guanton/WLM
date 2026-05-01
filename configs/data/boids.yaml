@@ -1,0 +1,34 @@
+# Data-generation config (boids)
+
+seed: 1
+device: cpu
+mode: boids
+
+# (Optional) blur meta computation
+blur_scale: 0.5
+blur_min: 1.0e-3
+blur_max: 10.0
+blur_num_times: 8
+blur_pairs_per_time: 4096
+blur_particles_subsample: 4000
+
+# Required rollout grid (must be top-level so argparse sees it)
+N: 1000
+steps: 100
+dt: 0.5
+d: 2
+num_p0: 1
+
+# Boids params (argparse dests use underscores)
+outer_radius: 1.0
+inner_radius: 0.3
+
+w_cohesion: 0.005
+w_separation: 0.1
+w_alignment: 0.3
+w_boundary: 0.5
+
+boundary: 5.0
+init_pos_std: 1.0
+init_vel_std: 1.0
+sigma: 0.0

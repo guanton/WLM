@@ -1,0 +1,23 @@
+# configs/data/oceans_big_forecast.yaml
+# Big-vortex ocean dataset (N=400, T=11, d=2) for the FORECAST task.
+# Distinct from configs/data/oceans.yaml (small vortex, N=111, T=9).
+
+mode: oceans
+
+# Path to the NPZ file. Paper run used vince_big_oceans_forecast.npz; the public
+# release ships it as big_oceans_forecast.npz. Verify your local file matches:
+#   python -c "import numpy as np; z=np.load('datasets/big_oceans_forecast.npz'); \
+#              print({k: z[k].shape for k in z.files})"
+# Expect ~(400, 11, 2) for positions and matching velocity tensor.
+npz_path: datasets/big_oceans_forecast.npz
+
+num_p0: 1
+normalize: true
+
+# Blur estimation parameters (for GeomLoss)
+blur_scale: 0.5
+blur_min: 0.001
+blur_max: 2.0
+blur_num_times: 8
+blur_pairs_per_time: 1024
+blur_particles_subsample: 100

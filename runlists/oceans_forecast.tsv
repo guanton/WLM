@@ -1,0 +1,6 @@
+# Oceans forecast (big vortex, N=400, T=11): 3 seeds, leave-the-last-one-out
+# RUNS_DIR=oceans_forecast sbatch --array=0-2 scripts/sbatch_run.sbatch runlists/oceans_forecast.tsv
+
+oceans_forecast	configs/data/oceans_big_forecast.yaml	configs/models/oceans_forecast.yaml	repro_s0	0	--set wandb_project=oceans_forecast	--set wandb_tags=oceans_forecast,repro,s0
+oceans_forecast	configs/data/oceans_big_forecast.yaml	configs/models/oceans_forecast.yaml	repro_s1	1	--set wandb_project=oceans_forecast	--set wandb_tags=oceans_forecast,repro,s1
+oceans_forecast	configs/data/oceans_big_forecast.yaml	configs/models/oceans_forecast.yaml	repro_s2	2	--set wandb_project=oceans_forecast	--set wandb_tags=oceans_forecast,repro,s2
