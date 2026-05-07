@@ -190,7 +190,7 @@ def make_gif(X_dict, times, save_path="boids.gif",
             ax.set_ylim(*ylim)
             ax.set_aspect("equal")
             _tikz_scatter(ax, data[:, k, 0], data[:, k, 1],
-                          color=color, s=10, alpha=0.55)
+                          color=_colors[r], s=10, alpha=0.55)
             ax.set_title(label, fontsize=9, fontweight="medium")
             ax.tick_params(labelsize=7)
             if r > 0:
